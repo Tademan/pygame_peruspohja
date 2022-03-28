@@ -1,16 +1,22 @@
-# This is a sample Python script.
+import sys
+import pygame
+def piirrä(näyttö):
+    pygame.draw.circle(näyttö, (200, 200, 0), (250, 250), 80)
+    pygame.display.flip()
+    pass
+pygame.init()  
+scr = pygame.display.set_mode((600,500))  
+pygame.display.set_caption('Pygame Window')
+while True:
+    # Näppäimet
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            sys.exit(0)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_s:
+                pass
+        if event.type == pygame.KEYUP:
+            pass
+    piirrä(scr)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
